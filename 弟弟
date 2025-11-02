@@ -1,0 +1,14 @@
+--[[Lua脚本强制踢出]]
+local Players = game:GetService("Players")
+ 
+local kickReason = "你这个废物还执行我的脚本"
+ 
+function kickTarget(target)
+if target and target:IsDescendantOf(Players) then
+target:Kick(kickReason)
+print("[踢出] " .. target.Name)
+end
+end
+ 
+-- 直接触发踢出（无需手动填写玩家名，关联触发对象）
+kickTarget(...)
